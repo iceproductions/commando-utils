@@ -1,0 +1,21 @@
+{
+    "name": "commando-snippets",
+    "publisher": "iceproductions",
+    "displayName": "Commando Snippets",
+    "description": "Snippets to be used with Ice Productions's fork of commando",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

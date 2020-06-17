@@ -1,0 +1,73 @@
+{
+    "Commando command": {
+        "prefix": ["command"],
+        "body": [
+            "const commando = require(\"@iceprod/discord.js-commando\");",
+            "",
+            "module.exports = class ${TM_FILENAME_BASE:Name} extends commando.Command {",
+            "    constructor(client) {",
+            "        super(client, {",
+            "            name: \"${TM_FILENAME_BASE:name}\",",
+            "            memberName: \"${TM_FILENAME_BASE:name}\",",
+            "            group: \"${TM_DIRECTORY:group}\",",
+            "            description: \"${description}\",",
+            "            args: [",
+            "                $args",
+            "            ]",
+            "        });",
+            "    }",
+            "    run(msg, { $args }) {",
+            "        $0",
+            "    }",
+            "};"
+        ],
+        "description": "Prepares commando command",
+        "scope": "javascript"
+    },
+    "Commando argument": {
+        "prefix": ["arg"],
+        "body": [
+            "{",
+            "    type: \"${string}\",",
+            "    key: \"$key\",",
+            "    prompt: \"$prompt\"",
+            "}${0:,}"
+        ],
+        "description": "Prepares commando argument",
+        "scope": "javascript"
+    },
+    "Commando type": {
+        "prefix": ["type"],
+        "body": [
+            "const { ArgumentType } = require(\"@iceprod/discord.js-commando\");",
+            "",
+            "module.exports = class ${TM_FILENAME_BASE}ArgumentType extends ArgumentType {",
+            "    constructor(client) {",
+            "        super(client, \"${TM_FILENAME_BASE}\");",
+            "    }",
+            "",
+            "    parse(val, msg, arg) {",
+            "        return val;",
+            "    }",
+            "",
+            "    validate(val, msg, arg) {",
+            "        ${0:return !!val;}",
+            "    }",
+            "}"
+        ],
+        "description": "Prepares commando argument",
+        "scope": "javascript"
+    },
+    "Message reply": {
+        "prefix": ["reply"],
+        "body": [
+            "msg.channel.send($0);"
+        ]
+    },
+    "Get member": {
+        "prefix": ["member"],
+        "body": [
+            "msg.guild.member($0);"
+        ]
+    }
+}
