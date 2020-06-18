@@ -4,6 +4,7 @@
     "displayName": "Commando Snippets",
     "description": "Snippets to be used with Ice Productions's fork of commando",
     "version": "0.0.1",
+    "repository": "github:iceproductions/commando-utils",
     "engines": {
         "vscode": "^1.46.0"
     },
